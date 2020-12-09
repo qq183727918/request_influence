@@ -4,7 +4,11 @@
 # @Site     : http:www.cdtest.cn/
 # @File     : sem_config.py
 # @Software : PyCharm
+from influence_token.influence_token import ToKen
 
+token = ToKen()
+
+print(token)
 
 class sem_config:
 
@@ -17,7 +21,7 @@ class sem_config:
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",
             "Accept-Language": "zh-CN,zh;q=0.9",
-            "Authorization": "Bearer 24d086b5-0165-4544-976e-693a4b17cffe",
+            "Authorization": token,
             "Connection": "keep-alive",
             "Host": "gateway.test.vevor.net",
             "Origin": "http://scp.test.vevor.net",
