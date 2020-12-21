@@ -6,40 +6,31 @@
 # @Software : PyCharm
 import requests
 from params.sem_params import ParamsTest
+from time import sleep
 
 
 class SemLoginTest:
     def semtoken(self):
-        querystring = {
-            "username": "liuxiaoqiang",
-            "password": "c90a3167151be42f910045215f6aac96",
-            "grant_type": "password"
-        }
+        querystring = {"username": "13925731395", "password": "c90a3167151be42f910045215f6aac96",
+                       "grant_type": "password"}
 
-        self.urla = ParamsTest().url_influence()
+        url = "https://gatewaypre.vevor.net/center-user-service/controller-authLoginController/login?username=13925731395&password=c90a3167151be42f910045215f6aac96&grant_type=password"
 
-        url = f"{self.urla}/controller-authLoginController/login?username=liuxiaoqiang&password=c90a3167151be42f910045215f6aac96&grant_type=password"
+        payload = ""
 
         headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": "Basic YXV0aDoxMjM=",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"
+            "Content-Type": "application/json",
+            "Authorization": "Basic YXV0aDoxMjM="
         }
 
-        response = requests.post(url, headers=headers, params=querystring)
+        response = requests.post(url, data=payload, headers=headers, params=querystring)
 
         re = response.json()
 
-        # token = re["data"]["access_token"]
-
-        # print(token)
-
-        # return token
-
-        print(re)
+        import pprint
+        pprint.pprint(re)
 
 
 if __name__ == '__main__':
     sem = SemLoginTest()
     sem.semtoken()
-
