@@ -4,11 +4,42 @@
 # @Site     : https://github.com/qq183727918
 # @File     : influence_token.py
 # @Software : PyCharm
-class ToKen:
-
-    def token(self):
-
-        token = 'Bearer 24d086b5-0165-4544-976e-693a4b17cffe'
+import requests
+from params.sem_params import ParamsTest
 
 
-        return token
+class SemLoginTest:
+    def semtoken(self):
+        querystring = {
+            "username": "liuxiaoqiang",
+            "password": "c90a3167151be42f910045215f6aac96",
+            "grant_type": "password"
+        }
+
+        self.urla = ParamsTest().url_influence()
+
+        url = f"{self.urla}/controller-authLoginController/login?username=liuxiaoqiang&password=c90a3167151be42f910045215f6aac96&grant_type=password"
+
+        headers = {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Authorization": "Basic YXV0aDoxMjM=",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"
+        }
+
+        response = requests.post(url, headers=headers, params=querystring)
+
+        re = response.json()
+
+        # token = re["data"]["access_token"]
+
+        # print(token)
+
+        # return token
+
+        print(re)
+
+
+if __name__ == '__main__':
+    sem = SemLoginTest()
+    sem.semtoken()
+

@@ -6,7 +6,8 @@
 # @Software : PyCharm
 from influence_token.influence_token import ToKen
 
-token = ToKen()
+Tk = ToKen()
+token = Tk.token()
 
 print(token)
 
