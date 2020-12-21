@@ -11,4 +11,4 @@ class ParamsTest:
         url = 'https://gatewaypre.vevor.net/scp-inventory-service'
 
         return url
-//
+
