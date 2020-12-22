@@ -5,10 +5,16 @@
 # @File     : sem_params.py
 # @Software : PyCharm
 
+
 class ParamsTest:
-    def url_influence(self):
+
+    def influence_url(self):
         """url请求头"""
-        url = 'https://gatewaypre.vevor.net/scp-inventory-service'
+        url = 'https://gatewaypre.vevor.net/'
 
         return url
 
+
+
+if __name__ == '__main':
+    sem = ParamsTest().influence_url

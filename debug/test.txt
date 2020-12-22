@@ -1,0 +1,16 @@
+purchasePrice: null
+purchasePriceAll: 1
+purchaseSn: "NCG2020122200021"
+purchaseStatus: 1
+quantityInStorage: null
+quantityInStorageAll: null
+quantityOnShelves: null
+quantitySent: null
+reconciliationPurchaseSn: "MV201912170165"
+skuName: null
+skuOm: null
+tax: 0
+taxRate: null
+updateBy: null
+updateTime: null
+visible: null

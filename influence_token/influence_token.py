@@ -6,15 +6,15 @@
 # @Software : PyCharm
 import requests
 from params.sem_params import ParamsTest
-from time import sleep
 
 
 class SemLoginTest:
     def semtoken(self):
         querystring = {"username": "13925731395", "password": "c90a3167151be42f910045215f6aac96",
                        "grant_type": "password"}
+        self.urla = ParamsTest().influence_url()
 
-        url = "https://gatewaypre.vevor.net/center-user-service/controller-authLoginController/login?username=13925731395&password=c90a3167151be42f910045215f6aac96&grant_type=password"
+        url = f"{self.urla}center-user-service/controller-authLoginController/login?username=13925731395&password=c90a3167151be42f910045215f6aac96&grant_type=password"
 
         payload = ""
 
@@ -27,10 +27,18 @@ class SemLoginTest:
 
         re = response.json()
 
-        import pprint
-        pprint.pprint(re)
+        # import pprint
+        # pprint.pprint(re)
+
+        access_token = re["data"]["access_token"]
+
+        token = '"' + access_token + '"'
+
+        with open('../file_token/token.json', 'w') as f:
+            f.writelines(token)
 
 
 if __name__ == '__main__':
     sem = SemLoginTest()
     sem.semtoken()
+
